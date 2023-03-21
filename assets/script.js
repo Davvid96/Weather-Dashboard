@@ -63,9 +63,7 @@ const setTodayData = (data) => {
   const iconEl = document.createElement("img");
   iconEl.classList.add("weatherIcon");
 
-  elTitle.textContent = `${data.name}, ${moment()
-    .subtract(10, "days")
-    .calendar()}`;
+  elTitle.textContent = `${data.name}, ${moment().calendar()}`;
   iconEl.setAttribute(
     "src",
     `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
@@ -79,8 +77,12 @@ const setTodayData = (data) => {
 
 document.querySelector("#history").addEventListener("click", (event) => {
   if (event.target.nodeName !== "P") return;
-  const searchInput = document.querySelector("#search-input");
-  searchInput.value = event.target.textContent;
+  const historyValue = getHistory("searchHistory");
+  historyValue.unshift(event.target.textContent);
+  setHistory("searchHistory", historyValue);
+  getWeatherData(event.target.textContent);
+  getForecastData(event.target.textContent);
+  setHistoryList();
 });
 
 const setHistoryList = () => {
@@ -99,11 +101,11 @@ setHistoryList();
 
 const setForecastData = (data) => {
   const filteredData = [
-    data.list[0],
     data.list[8],
     data.list[16],
     data.list[24],
     data.list[32],
+    data.list[39],
   ];
   console.log(filteredData);
   const elForecast = document.querySelector("#forecast");
