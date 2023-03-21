@@ -1,3 +1,31 @@
 #today {
   border: black solid 2px;
 }
+
+#forecast {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.forecast-card {
+  background-color: rgb(169, 169, 240);
+  padding: 10px;
+  border: black solid 2px;
+}
+
+.historyLink {
+  border: black solid 2px;
+  background-color: lightgrey;
+  text-align: center;
+  font-weight: 700;
+}
+
+.historyLink:hover {
+  cursor: pointer;
+}
+
+.search-button {
+  border: black solid 2px;
+  background-color: lightblue;
+  align-content: center;
+}
