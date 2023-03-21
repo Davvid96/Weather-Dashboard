@@ -62,4 +62,4 @@ This was a very fun challenge to work on, I think the result is good, hopefully 
 
 ## Deployment:
 
-- Following is a link to the final version of the Website: ' '
+- Following is a link to the final version of the Website: 'https://davvid96.github.io/Weather-Dashboard/'
